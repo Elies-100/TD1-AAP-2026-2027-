@@ -1,0 +1,11 @@
+##EXERCICE 2
+## Question 1
+import sys
+for caractere in sys.stdin.read():
+    print(caractere)
+
+import sys
+print("Une erreur est survenue", file=sys.stderr)
+
+import sys
+sys.stderr.write("Une erreur est survenue\n")

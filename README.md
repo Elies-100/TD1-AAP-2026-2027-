@@ -113,6 +113,7 @@ On souhaite lire le flux de caractères envoyé à un programme sur son entrée 
 import sys
 for caractere in sys.stdin.read():
     print(caractere)
+
 ```
 
 Pour déterminer si le programme python est lancé en mode interactif ou si l'entrée standard est redirigée, on peut utiliser la fonction `sys.stdin.isatty()` qui renvoie `true` si l'entrée standard correspond au clavier. 
