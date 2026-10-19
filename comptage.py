@@ -8,15 +8,47 @@
 - Votre programme devra proposer un mode de débogage affichant les numéros des mots détectés. 
 - Une fois le programme mis au point, poussez votre travail sur votre dépôt git et appelez l'enseignant avant de passer à l'exercice suivant."""
 
+import sys
+import os
 
 def lire():
-    # récupération des arguments et sélection du flux
+    if len(sys.argv)>1:
+        try:
+            flux=open(sys.argb[1],"r")
+        except:
+            sys.exit("Erreur" + sys.argv[1])
+        texte=flux.read()
+        flux.close()
+    else:
+        texte = sys.stdin.read()
+    return texte
+
+texte=lire()
+caractere=0
+ligne=0
+mot=0
+dans_mot=False
+for a in texte:
+    caractere+=1
+    match a:
+        case"\n":
+            ligne+=1
+            dans_mot=False
+        case ""| "\t":
+            dans_mot=False
+        case _:
+            if not dans_mot:
+                dans_mot=True
+                mot+=1
+                if "DEBUG" in os.environ:
+                        print("mot", mot, file=sys.stderr)
+
+print(ligne, mot, caractere)
+    
+# récupération des arguments et sélection du flux
     # parcours du flux
     # comptage
     # affichage 
-    return ""
-
-
     
     
 
