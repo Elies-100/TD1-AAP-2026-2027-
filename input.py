@@ -3,10 +3,9 @@
 - Une fois le programme mis au point, poussez votre travail sur votre dépôt git et appelez l'enseignant avant de passer à l'exercice suivant."""
 import sys
 def saisie():
-    name=sys.stdin.read()
-
+    name = input ("Entrez votre pseudo: ")
     print("\n Bonjour", name, "!")
-    return ""
 
 if __name__ == "__main__":
     saisie()
+
